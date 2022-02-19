@@ -1,0 +1,11 @@
+---
+- hosts: test1
+  remote_user: ubuntu
+  become: yes
+  vars:
+    ansible_port: "{{ ssh_port | default('22') }}"
+  roles:
+  - geerlingguy.firewall
+  - geerlingguy.docker
+  - wp_docker
+
