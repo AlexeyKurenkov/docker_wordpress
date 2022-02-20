@@ -14,12 +14,12 @@ Execution steps:
       [test_servers]
       test1 ansible_host=3.125.53.203
   ```
-  3. Encrypt *mysql root password* and *mysql wordpress password* with Ansible vault and place the results to the **/host_vars/test1** accordingly:
+  2. Encrypt *mysql root password* and *mysql wordpress password* with Ansible vault and place the results to the **/host_vars/test1** accordingly:
   ```
       ansible-vault encrypt_string 'your_mysql_password' --name 'mysql_root_password'
       ansible-vault encrypt_string 'your_wordpress_password' --name 'mysql_wordpress_password'
   ```
-  4. Run the playbook wp.yml
+  3. Run the playbook wp.yml
   ```
       ansible-playbook --ask-vault-pass wp.yml
   ```
